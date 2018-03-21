@@ -12,15 +12,15 @@ export class RecipeService  {
 
   private recipes : Recipe[] = [
     new Recipe(
-      'test recipe' , 
+      'test recipe 1' , 
       'This is simply a test' ,  
       'http://maxpixel.freegreatpicture.com/static/photo/1x/Meat-Power-Recipe-Food-Dishes-Pork-1459693.jpg',
       [ new Ingredient ( 'ingredient1' , 1 ),
        new Ingredient ( 'ingredient2' , 2 )]),
     new Recipe(
-      'test recipe' , 
+      'test recipe 2' , 
       'This is simply a test' ,
-      'http://maxpixel.freegreatpicture.com/static/photo/1x/Meat-Power-Recipe-Food-Dishes-Pork-1459693.jpg',
+      'https://www.theurbanlist.com/content/article/mcdonalds_mcvegan.jpg',
       [ new Ingredient ( 'ingredient3' , 3 ),
        new Ingredient ( 'ingredient4' , 4 )])
   ];
