@@ -13,7 +13,15 @@ export class AuthService {
       .catch( (error) => {
         console.log(error);
       } );
-
+  }
+  
+  signIn( email : string , password : string ){
+    
+    firebase.auth().signInWithEmailAndPassword( email , password )
+      .then( (response) => console.log( response ))
+      .catch( (error) => {
+        console.log(error);
+      } );
   }
 
 }
