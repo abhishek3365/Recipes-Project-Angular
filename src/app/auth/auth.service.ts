@@ -6,6 +6,8 @@ export class AuthService {
 
   constructor() { }
 
+  token : string;
+
   signUp( email : string , password : string ){
     
     firebase.auth().createUserWithEmailAndPassword( email , password )
@@ -18,10 +20,22 @@ export class AuthService {
   signIn( email : string , password : string ){
     
     firebase.auth().signInWithEmailAndPassword( email , password )
-      .then( (response) => console.log( response ))
+      .then( (response) => {
+        console.log( response )
+        firebase.auth().currentUser.getToken().then( (token:string) =>{
+          this.token = token;
+        });
+      })
       .catch( (error) => {
         console.log(error);
       } );
+  }
+
+  getToken () {
+    firebase.auth().currentUser.getToken().then( (token:string) =>{
+      this.token = token;
+    });
+    return this.token;
   }
 
 }
